@@ -1,0 +1,11 @@
+(defun looping_multiplier (firstNumb secondNumb)
+   (format t "Enter two numbers.~%")
+   (setq product 0)
+   (setq firstNumb (read))
+   (setq secondNumb (read))
+   (loop for secondNumb from 1 to secondNumb
+        do (setq product (+ product firstNumb))
+     )	 
+   (format t "New product is ~D.~%" product)
+)
+(looping_multiplier firstNumb secondNumb)
