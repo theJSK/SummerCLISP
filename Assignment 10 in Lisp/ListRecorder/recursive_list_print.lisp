@@ -1,16 +1,18 @@
 (format t "Enter ten integers separated by spaces, then press return.~%")
 (setq mylist '())
-(setq firstNumb (read))
+;(setq firstNumb (read))
 (setq listLength 0)
 
-(defun recursive-list-print (firstNumb listLength)
-  
-  (cond ((eq listLength 2) (format t "~D ~% " myList))
+(defun recursive-list-print (listLength)
+  (cond ((eq listLength 10)
+	 (loop for i from 0 to 9
+	    do (format t "~D " (nth i myList))
+	      ))
 	(T
-	 (setq myList (append myList (list (firstNumb))))
-	 (recursive-list-print firstNumb (1+ listLength))
+	 (setq myList (append myList (list (read))))
+	 (recursive-list-print (1+ listLength))
 	 )
 	)
   )
 
-(recursive-list-print firstNumb listLength)
+(recursive-list-print listLength)
